@@ -50,6 +50,10 @@ public class PlayerControls : MonoBehaviour
         }
         else if (thing.gameObject.CompareTag("BadThing"))
         {
+            Debug.Log(gm.score);
+            gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
+            Destroy(thing.gameObject);
+            Debug.Log(gm.score);
             Destroy(thing.gameObject);
             lives--;
             if (lives <= 0)
