@@ -7,6 +7,7 @@ public class PlayerControls : MonoBehaviour
     public float leftBound = -5;
     public float rightBound = 5;
     public float speed = 1;
+    public int lives = 3;
 
     void Start()
     {
@@ -27,7 +28,6 @@ public class PlayerControls : MonoBehaviour
     void Movement() 
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
-        Debug.Log(horizontal);
         transform.Translate(new Vector3(speed * horizontal, 0, 0));
         if (transform.position.x <= leftBound)
         {
@@ -48,6 +48,12 @@ public class PlayerControls : MonoBehaviour
         else if (thing.gameObject.CompareTag("BadThing"))
         {
             Destroy(thing.gameObject);
+            lives--;
+            if (lives <= 0)
+            {
+                Debug.Log("End the Game!");
+                // call game control function here
+            }
         }
     }
 }
