@@ -3,6 +3,13 @@ You are a house. You eat the good tenants and avoid the bad tenants.
 Lose a life if you get a bad tenant (they break your windows and you are sad) 
 Lose if you run out of lives (get wrecked) 
 
+Good things:
+- People
+- Food 
+Bad things: 
+- Three rats in a trenchcoat
+- Giant cockroaches
+- Smashy things 
 
 LATER:
 - Track who you've eaten already so you can prioritise diversity (need to get a certain percentage balance) 
