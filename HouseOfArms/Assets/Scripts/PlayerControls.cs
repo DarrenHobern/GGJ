@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour
 {
+    GameControlScript gm;
     public float leftBound = -5;
     public float rightBound = 5;
     public float speed = 1;
@@ -13,7 +14,8 @@ public class PlayerControls : MonoBehaviour
 
     void Start()
     {
-        LivesTxt.text = "Lives: " + lives;
+        //LivesTxt.text = "Lives: " + lives;
+        gm = GameControlScript.instance;
     }
 
     // Update is called once per frame
@@ -21,13 +23,12 @@ public class PlayerControls : MonoBehaviour
     {
         Movement();
 
-
     }
 
     /// <summary>
     /// Movement this instance.
     /// </summary>
-    void Movement() 
+    void Movement()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         transform.Translate(new Vector3(speed * horizontal, 0, 0));
@@ -45,17 +46,22 @@ public class PlayerControls : MonoBehaviour
     {
         if (thing.gameObject.CompareTag("GoodThing"))
         {
+            Debug.Log(gm.score);
+            gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);
+            Debug.Log(gm.score);
         }
         else if (thing.gameObject.CompareTag("BadThing"))
         {
+            Debug.Log(gm.score);
+            gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
+            Destroy(thing.gameObject);
+            Debug.Log(gm.score);
             Destroy(thing.gameObject);
             lives--;
-            LivesTxt.text = "Lives: " + lives;
             if (lives <= 0)
             {
-                Debug.Log("End the Game!");
-                // call game control function here
+                gm.LoseGame();
             }
         }
     }
