@@ -1,0 +1,9 @@
+You are a house. You eat the good tenants and avoid the bad tenants.
+3D infinite runner 
+Lose a life if you get a bad tenant (they break your windows and you are sad) 
+Lose if you run out of lives (get wrecked) 
+
+
+LATER:
+- Track who you've eaten already so you can prioritise diversity (need to get a certain percentage balance) 
+- Pattern, e.g. blue blue red 
