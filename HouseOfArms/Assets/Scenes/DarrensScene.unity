@@ -213,8 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba71cfaa1458409a8d3bc6c73c1c6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftBound: 5
-  rightBound: 10
+  leftBound: -5
+  rightBound: 5
   speed: 1
 --- !u!65 &1634497343
 BoxCollider:
