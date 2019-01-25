@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -210,9 +210,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 325661783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96760a4960c134f4fa8d720615179edd, type: 3}
+  m_Script: {fileID: 11500000, guid: 465d696e9f7f94544a46f0217abebadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovingSpeed: -5
+  DeletionDistance: 200
+  CanMoveSideways: 0
+  SidewaysMovementSpeed: 2
+  MinMaxSidewaysMovement: {x: -3, y: 3}
 --- !u!64 &325661785
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -312,9 +317,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 491604368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6750f7ddbe7b1af4794b9a9e340e56bc, type: 3}
+  m_Script: {fileID: 11500000, guid: ac01c579ef91a4c928e103fb24ce2e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PathObjects:
+  - {fileID: 1060533415}
+  - {fileID: 325661783}
+  - {fileID: 550123468}
+  - {fileID: 1393158053}
+  PathLength: 15
+  DistanceBehindToTeleport: -15
 --- !u!4 &491604370
 Transform:
   m_ObjectHideFlags: 0
@@ -445,9 +457,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 550123468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96760a4960c134f4fa8d720615179edd, type: 3}
+  m_Script: {fileID: 11500000, guid: 465d696e9f7f94544a46f0217abebadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovingSpeed: -5
+  DeletionDistance: 200
+  CanMoveSideways: 0
+  SidewaysMovementSpeed: 2
+  MinMaxSidewaysMovement: {x: -3, y: 3}
 --- !u!64 &550123470
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5321,9 +5338,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1060533415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96760a4960c134f4fa8d720615179edd, type: 3}
+  m_Script: {fileID: 11500000, guid: 465d696e9f7f94544a46f0217abebadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovingSpeed: -5
+  DeletionDistance: 200
+  CanMoveSideways: 0
+  SidewaysMovementSpeed: 2
+  MinMaxSidewaysMovement: {x: -3, y: 3}
 --- !u!1 &1066779877
 GameObject:
   m_ObjectHideFlags: 0
@@ -5333,8 +5355,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1066779878}
+  - component: {fileID: 1066779879}
   m_Layer: 0
-  m_Name: SpawnableObjects
+  m_Name: SpawnContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5354,6 +5377,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1066779879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066779877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d1505a0a3ed024fbf5e2eb591213a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Obsticles: []
 --- !u!1 &1393158053
 GameObject:
   m_ObjectHideFlags: 0
@@ -5383,9 +5419,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1393158053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96760a4960c134f4fa8d720615179edd, type: 3}
+  m_Script: {fileID: 11500000, guid: 465d696e9f7f94544a46f0217abebadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovingSpeed: -5
+  DeletionDistance: 200
+  CanMoveSideways: 0
+  SidewaysMovementSpeed: 2
+  MinMaxSidewaysMovement: {x: -3, y: 3}
 --- !u!64 &1393158055
 MeshCollider:
   m_ObjectHideFlags: 0
