@@ -42,7 +42,7 @@ public class ObjectMovement : MonoBehaviour
         {
             if(camera.transform.position.z > DeletionDistance + transform.position.z)
             {
-                Destroy(this);
+                Destroy(this.gameObject);
             }
         }
 
