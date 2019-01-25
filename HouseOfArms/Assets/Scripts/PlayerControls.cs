@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -8,10 +9,11 @@ public class PlayerControls : MonoBehaviour
     public float rightBound = 5;
     public float speed = 1;
     public int lives = 3;
+    public Text LivesTxt;
 
     void Start()
     {
-        
+        LivesTxt.text = "Lives: " + lives;
     }
 
     // Update is called once per frame
@@ -49,6 +51,7 @@ public class PlayerControls : MonoBehaviour
         {
             Destroy(thing.gameObject);
             lives--;
+            LivesTxt.text = "Lives: " + lives;
             if (lives <= 0)
             {
                 Debug.Log("End the Game!");
