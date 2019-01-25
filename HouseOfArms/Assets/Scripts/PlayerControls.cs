@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
+    GameControlScript gm;
     public float leftBound = -5;
     public float rightBound = 5;
     public float speed = 1;
@@ -11,14 +12,13 @@ public class PlayerControls : MonoBehaviour
 
     void Start()
     {
-        
+        gm = GameControlScript.instance;
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
-
 
     }
 
@@ -43,7 +43,10 @@ public class PlayerControls : MonoBehaviour
     {
         if (thing.gameObject.CompareTag("GoodThing"))
         {
+            Debug.Log(gm.score);
+            gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);
+            Debug.Log(gm.score);
         }
         else if (thing.gameObject.CompareTag("BadThing"))
         {
@@ -51,8 +54,7 @@ public class PlayerControls : MonoBehaviour
             lives--;
             if (lives <= 0)
             {
-                Debug.Log("End the Game!");
-                // call game control function here
+                gm.LoseGame();
             }
         }
     }
