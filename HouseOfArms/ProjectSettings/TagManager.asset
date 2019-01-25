@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GoodThing
   - BadThing
+  - Score
   layers:
   - Default
   - TransparentFX

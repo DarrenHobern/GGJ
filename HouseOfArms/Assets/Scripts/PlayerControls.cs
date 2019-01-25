@@ -14,8 +14,11 @@ public class PlayerControls : MonoBehaviour
 
     void Start()
     {
-        //LivesTxt.text = "Lives: " + lives;
         gm = GameControlScript.instance;
+        if (LivesTxt)
+        {
+            LivesTxt.text = "Lives: " + lives;
+        }
     }
 
     // Update is called once per frame
@@ -59,6 +62,10 @@ public class PlayerControls : MonoBehaviour
             Debug.Log(gm.score);
             Destroy(thing.gameObject);
             lives--;
+            if (LivesTxt)
+            {
+                LivesTxt.text = "Lives: " + lives;
+            }
             if (lives <= 0)
             {
                 gm.LoseGame();
