@@ -27,8 +27,12 @@ public class ScenerySpawning : MonoBehaviour
         float remainingDifference = totalDifference;
         while (remainingDifference > 0)
         {
-            Vector3 spawnLocation = new Vector3(transform.position.x, transform.position.y, end_z + remainingDifference);
+            // Nudge the object out of alignment by a small random amount.
+            float   xVariation = Random.Range(-0.5f, 0.5f);
 
+            Vector3 spawnLocation = new Vector3(transform.position.x + xVariation, transform.position.y, end_z + remainingDifference);
+
+            // Optionally rotate an object so that it can face the road from the other side
             Quaternion rotation;
             if (isMirrored == false)
             {
