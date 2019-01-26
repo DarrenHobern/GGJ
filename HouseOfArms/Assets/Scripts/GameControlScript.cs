@@ -32,7 +32,9 @@ public class GameControlScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //TogglePauseMenu();
+        Time.timeScale = 1;
+        PauseScreen.SetActive(false);
+        GameOverScreen.SetActive(false);
     }
 
     // Update is called once per frame
