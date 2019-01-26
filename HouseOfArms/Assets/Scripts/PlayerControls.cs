@@ -18,11 +18,13 @@ public class PlayerControls : MonoBehaviour
     public GameObject CollectedGood;
 
     [Header("Ammo and Bullets")]
+    [SerializeField] private int bulletPoolSize = 300;
     [SerializeField] private Transform gunTransform;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float gunForce = 100;
     [SerializeField] private float attackDelay = 0.1f;
     [SerializeField] private float reloadTime = 2f;
+    [SerializeField] private float bulletLife = 5f;
     private float nextAttackTime = 0;
     private int personCount = 0; // also the magazine size
     private int ammoCount = 0;
@@ -31,6 +33,7 @@ public class PlayerControls : MonoBehaviour
     void Start()
     {
         gm = GameControlScript.instance;
+        SimplePool.Preload(bulletPrefab, bulletPoolSize);
         Reset();
         if (LivesTxt)
         {
@@ -84,6 +87,8 @@ public class PlayerControls : MonoBehaviour
     }
 
     private void Attack() {
+        if (gm.GetPaused()) return;
+
         bool attackInput = Input.GetAxisRaw("Fire") > Mathf.Epsilon;
         if (attackInput) {
             if (ammoCount > 0) {
@@ -92,8 +97,10 @@ public class PlayerControls : MonoBehaviour
                     ammoCount--;
                     // Fire a person here
                     print("fire");
-                    GameObject bullet = Instantiate(bulletPrefab, gunTransform.position, gunTransform.rotation); // TODO object pooling
+                    // GameObject bullet = Instantiate(bulletPrefab, gunTransform.position, gunTransform.rotation); // TODO object pooling
+                    GameObject bullet = SimplePool.Spawn(bulletPrefab, gunTransform.position, gunTransform.rotation);
                     bullet.GetComponent<Rigidbody>().AddForce(Vector3.forward * gunForce);
+                    StartCoroutine(DespawnBullet(bullet, bulletLife));
                 }
             }
             else if (!reloading) {
@@ -104,6 +111,11 @@ public class PlayerControls : MonoBehaviour
             
         }
     }
+
+    IEnumerator DespawnBullet(GameObject bullet, float delay) {
+        yield return new WaitForSeconds(delay);
+        SimplePool.Despawn(bullet);
+    }     
 
     IEnumerator Reload() {
         print("reloading");

@@ -6532,7 +6532,7 @@ PrefabInstance:
     - target: {fileID: 3207441603914636246, guid: 4baaa719831724c298b931870a76769e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.67
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3207441603914636246, guid: 4baaa719831724c298b931870a76769e,
         type: 3}
@@ -6599,21 +6599,6 @@ PrefabInstance:
       propertyPath: CollectedGood
       value: 
       objectReference: {fileID: 2046224095}
-    - target: {fileID: 1625797946207103484, guid: 4baaa719831724c298b931870a76769e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.32532054
-      objectReference: {fileID: 0}
-    - target: {fileID: 1625797946207103484, guid: 4baaa719831724c298b931870a76769e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.94560385
-      objectReference: {fileID: 0}
-    - target: {fileID: 1625797946207103484, guid: 4baaa719831724c298b931870a76769e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -37.97
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4baaa719831724c298b931870a76769e, type: 3}
 --- !u!1 &1820930647
@@ -7139,7 +7124,7 @@ PrefabInstance:
     - target: {fileID: 90180184601141671, guid: 1446152959ba30d3db4f2560d5dfd3b5,
         type: 3}
       propertyPath: bossThreshold
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1446152959ba30d3db4f2560d5dfd3b5, type: 3}
