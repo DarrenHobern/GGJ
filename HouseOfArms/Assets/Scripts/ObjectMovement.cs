@@ -12,8 +12,6 @@ public class ObjectMovement : MonoBehaviour
     public float DeletionDistance = 2.0f;
     //Can the object move sideways
     public bool CanMoveSideways = false;
-    //Sideways movement Speed
-    public float SidewaysMovementSpeed = 2.0f;
     //If the object can move sideways, give the min and max position it can move
     public Vector2 MinMaxSidewaysMovement = new Vector2(-3.0f, 3.0f);
 
@@ -32,12 +30,28 @@ public class ObjectMovement : MonoBehaviour
         {
             MovingRight = false;
         }
+
+        if (CanMoveSideways)
+        {
+            if (MovingRight)
+            {
+                transform.Rotate(transform.rotation.x, 45.0f, transform.rotation.z);
+            }
+            else
+            {
+                transform.Rotate(transform.rotation.x, -45.0f, transform.rotation.z);
+            }
+        }
+        else
+        {
+            MovingSpeed /= 2.0f;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(-transform.forward * MovingSpeed * Time.deltaTime);
+        transform.Translate(-transform.forward * MovingSpeed * Time.deltaTime); //TODO make object face the way it's moving
 
         GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
         if (camera)
@@ -55,15 +69,21 @@ public class ObjectMovement : MonoBehaviour
         {
             if (MovingRight)
             {
-                transform.Translate(transform.right * SidewaysMovementSpeed * Time.deltaTime);
+                transform.Translate(transform.right * MovingSpeed * Time.deltaTime);
             }
             else
             {
-                transform.Translate(-transform.right * SidewaysMovementSpeed * Time.deltaTime);
+                transform.Translate(-transform.right * MovingSpeed * Time.deltaTime);
             }
-            if(transform.position.x < MinMaxSidewaysMovement.x || transform.position.x > MinMaxSidewaysMovement.y)
+            if (transform.position.x < MinMaxSidewaysMovement.x && MovingRight)
             {
-                MovingRight = !MovingRight;
+                MovingRight = false;
+                transform.Rotate(transform.rotation.x, -90.0f, transform.rotation.z);
+            }
+            else if (transform.position.x > MinMaxSidewaysMovement.y && !MovingRight)
+            {
+                MovingRight = true;
+                transform.Rotate(transform.rotation.x, 90.0f, transform.rotation.z);
             }
         }
     }

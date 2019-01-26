@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: d29d776e11463d94eadc1e9f88a17b21
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: pasted__pCube116_pasted__possum_group
+    100002: pasted__possum_group_pasted__pCube106
+    100004: pasted__possum_group_pasted__pCube107
+    100006: pasted__possum_group_pasted__pCube110
+    100008: pasted__possum_group_pasted__pCube111
+    100010: pasted__possum_group_pasted__pCube112
+    100012: pasted__possum_group_pasted__pCube114
+    100014: pasted__possum_group_pasted__pCube115
+    100016: pasted__possum_group_pasted__pCube118
+    100018: pasted__possum_group_pasted__pCube119
+    100020: pasted__possum_group_pasted__pCube121
+    100022: pasted__possum_group_pasted__pPlane1
+    100024: pasted__possum_group_pasted__pPlane2
+    100026: //RootNode
+    400000: pasted__pCube116_pasted__possum_group
+    400002: pasted__possum_group_pasted__pCube106
+    400004: pasted__possum_group_pasted__pCube107
+    400006: pasted__possum_group_pasted__pCube110
+    400008: pasted__possum_group_pasted__pCube111
+    400010: pasted__possum_group_pasted__pCube112
+    400012: pasted__possum_group_pasted__pCube114
+    400014: pasted__possum_group_pasted__pCube115
+    400016: pasted__possum_group_pasted__pCube118
+    400018: pasted__possum_group_pasted__pCube119
+    400020: pasted__possum_group_pasted__pCube121
+    400022: pasted__possum_group_pasted__pPlane1
+    400024: pasted__possum_group_pasted__pPlane2
+    400026: //RootNode
+    2100000: pasted__pCube116_pasted__possum_groupMat
+    2100002: pasted__possum_group_pasted__pCube106Mat
+    2100004: pasted__possum_group_pasted__pCube107Mat
+    2100006: pasted__possum_group_pasted__pCube110Mat
+    2100008: pasted__possum_group_pasted__pCube111Mat
+    2100010: pasted__possum_group_pasted__pCube112Mat
+    2100012: pasted__possum_group_pasted__pCube114Mat
+    2100014: pasted__possum_group_pasted__pCube115Mat
+    2100016: pasted__possum_group_pasted__pCube118Mat
+    2100018: pasted__possum_group_pasted__pCube119Mat
+    2100020: pasted__possum_group_pasted__pCube121Mat
+    2100022: pasted__possum_group_pasted__pPlane1Mat
+    2100024: pasted__possum_group_pasted__pPlane2Mat
+    2300000: pasted__pCube116_pasted__possum_group
+    2300002: pasted__possum_group_pasted__pCube106
+    2300004: pasted__possum_group_pasted__pCube107
+    2300006: pasted__possum_group_pasted__pCube110
+    2300008: pasted__possum_group_pasted__pCube111
+    2300010: pasted__possum_group_pasted__pCube112
+    2300012: pasted__possum_group_pasted__pCube114
+    2300014: pasted__possum_group_pasted__pCube115
+    2300016: pasted__possum_group_pasted__pCube118
+    2300018: pasted__possum_group_pasted__pCube119
+    2300020: pasted__possum_group_pasted__pCube121
+    2300022: pasted__possum_group_pasted__pPlane1
+    2300024: pasted__possum_group_pasted__pPlane2
+    3300000: pasted__pCube116_pasted__possum_group
+    3300002: pasted__possum_group_pasted__pCube106
+    3300004: pasted__possum_group_pasted__pCube107
+    3300006: pasted__possum_group_pasted__pCube110
+    3300008: pasted__possum_group_pasted__pCube111
+    3300010: pasted__possum_group_pasted__pCube112
+    3300012: pasted__possum_group_pasted__pCube114
+    3300014: pasted__possum_group_pasted__pCube115
+    3300016: pasted__possum_group_pasted__pCube118
+    3300018: pasted__possum_group_pasted__pCube119
+    3300020: pasted__possum_group_pasted__pCube121
+    3300022: pasted__possum_group_pasted__pPlane1
+    3300024: pasted__possum_group_pasted__pPlane2
+    4300000: pasted__pCube116_pasted__possum_group
+    4300002: pasted__possum_group_pasted__pCube106
+    4300004: pasted__possum_group_pasted__pCube107
+    4300006: pasted__possum_group_pasted__pCube110
+    4300008: pasted__possum_group_pasted__pCube111
+    4300010: pasted__possum_group_pasted__pCube112
+    4300012: pasted__possum_group_pasted__pCube114
+    4300014: pasted__possum_group_pasted__pCube115
+    4300016: pasted__possum_group_pasted__pCube118
+    4300018: pasted__possum_group_pasted__pCube119
+    4300020: pasted__possum_group_pasted__pCube121
+    4300022: pasted__possum_group_pasted__pPlane1
+    4300024: pasted__possum_group_pasted__pPlane2
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
