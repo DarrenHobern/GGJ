@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c68d58f39581f24d96f29477f8a8a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovingSpeed: 5
+  MovingSpeed: 2.5
   ResetDistanceFromCamera: 2
   PositionToResetTo: {x: 0, y: 0, z: 0}
 --- !u!1001 &5842622876667962189
