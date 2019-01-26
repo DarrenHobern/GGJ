@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScenerySpawning : MonoBehaviour
 {
     // This will hold the prefabs we will instantiate during runtime
-    public GameObject[] sceneryPrefabs = new GameObject[2];
+    public GameObject[] sceneryPrefabs = new GameObject[3];
 
     public float minTimeBetweenObjects;
     public float maxTimeBetweenObjects;
