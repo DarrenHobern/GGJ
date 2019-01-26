@@ -6,6 +6,9 @@ public class GameControlScript : MonoBehaviour
 {
     public static GameControlScript instance = null;
     public float score = 0;
+    public GameObject PauseScreen;
+
+    private bool Pause = false;
 
     void Awake()
     {
@@ -28,12 +31,31 @@ public class GameControlScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePauseMenu();
+        }
     }
 
     public void LoseGame()
     {
         Debug.Log("End the Game in the game control script!");
         // call game control function here
+    }
+
+    public void TogglePauseMenu()
+    {
+        if (Pause)
+        {
+            Time.timeScale = 1;
+            PauseScreen.SetActive(false);
+            Pause = false;
+        }
+        else
+        {
+            Time.timeScale = 0;
+            PauseScreen.SetActive(true);
+            Pause = true;
+        }
     }
 }

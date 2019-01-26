@@ -11,6 +11,7 @@ public class PlayerControls : MonoBehaviour
     public float speed = 1;
     public int lives = 3;
     public Text LivesTxt;
+    public Text ScoreTxt;
 
     void Start()
     {
@@ -18,6 +19,10 @@ public class PlayerControls : MonoBehaviour
         if (LivesTxt)
         {
             LivesTxt.text = "Lives: " + lives;
+        }
+        if(ScoreTxt)
+        {
+            ScoreTxt.text = "Score: " + gm.score;
         }
     }
 
@@ -70,6 +75,10 @@ public class PlayerControls : MonoBehaviour
             {
                 gm.LoseGame();
             }
+        }
+        if (ScoreTxt)
+        {
+            ScoreTxt.text = "Score: " + gm.score;
         }
     }
 }
