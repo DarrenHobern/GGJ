@@ -27,7 +27,8 @@ public class SpawnObsticals : MonoBehaviour
             Instantiate(Obsticles[RandomObjectToSpawn], this.transform.position + new Vector3(Random.Range(MinMaxSideSpawn.x, MinMaxSideSpawn.y), 0.0f, DistanceInfrontOfCamera), Obsticles[RandomObjectToSpawn].transform.rotation);
 
             TimeBetweenSpawns -= TimeBetweenSpawnsDecreaseAmount * Time.deltaTime;
-            TimeTillNextSpawn = Time.time + TimeBetweenSpawns;
+            TimeBetweenSpawns = Mathf.Max(0.4f, TimeBetweenSpawns);
+            TimeTillNextSpawn = Time.time + 0.4f;
         }
     }
 }
