@@ -66,10 +66,13 @@ public class PlayerControls : MonoBehaviour
     {
         if (thing.gameObject.CompareTag("GoodThing"))
         {
-            Debug.Log(gm.score);
+            if (thing.GetComponent<ObjectMovement>())
+            {
+                thing.GetComponent<ObjectMovement>().SeperateChildAudio();
+            }
+            
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);
-            Debug.Log(gm.score);
 
             if (CollectedGood)
             {
@@ -79,10 +82,12 @@ public class PlayerControls : MonoBehaviour
         }
         else if (thing.gameObject.CompareTag("BadThing"))
         {
-            Debug.Log(gm.score);
+            if (thing.GetComponent<ObjectMovement>())
+            {
+                thing.GetComponent<ObjectMovement>().SeperateChildAudio();
+            }
+            
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
-            Destroy(thing.gameObject);
-            Debug.Log(gm.score);
             Destroy(thing.gameObject);
             lives--;
             if (LivesTxt)
