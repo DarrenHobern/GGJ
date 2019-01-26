@@ -66,10 +66,9 @@ public class PlayerControls : MonoBehaviour
     {
         if (thing.gameObject.CompareTag("GoodThing"))
         {
-            Debug.Log(gm.score);
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);
-            Debug.Log(gm.score);
+            gm.AddPerson();
 
             if (CollectedGood)
             {
@@ -79,10 +78,7 @@ public class PlayerControls : MonoBehaviour
         }
         else if (thing.gameObject.CompareTag("BadThing"))
         {
-            Debug.Log(gm.score);
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
-            Destroy(thing.gameObject);
-            Debug.Log(gm.score);
             Destroy(thing.gameObject);
             lives--;
             if (LivesTxt)

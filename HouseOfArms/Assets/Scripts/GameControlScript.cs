@@ -5,8 +5,14 @@ using UnityEngine;
 public class GameControlScript : MonoBehaviour
 {
     public static GameControlScript instance = null;
+
+
     public float score = 0;
     public GameObject PauseScreen;
+    private int peopleCollected = 0;
+    [SerializeField] private int bossThresholdOne = 10;
+    [SerializeField] private int bossThresholdTwo = 20;
+    [SerializeField] private int bossThresholdThree = 30;
 
     private bool Pause = false;
 
@@ -31,10 +37,36 @@ public class GameControlScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Pause") || Input.GetKeyDown("joystick button 7"))
+        if(Input.GetButtonDown("Pause") || Input.GetKeyDown("joystick button 7")) //getaxis
         {
             TogglePauseMenu();
         }
+
+
+
+    }
+
+    public void AddPerson()
+    {
+        peopleCollected++;
+        if (peopleCollected >= bossThresholdThree)
+        {
+            // Trigger third boss fight
+        }
+        else if (peopleCollected >= bossThresholdTwo)
+        {
+            // Trigger second boss fight
+        }
+        else if (peopleCollected >= bossThresholdOne)
+        {
+            // Trigger first boss fight
+        }
+
+    }
+
+    private void TurnOffRegularMode()
+    {
+
     }
 
     public void LoseGame()
