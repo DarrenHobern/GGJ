@@ -87,7 +87,7 @@ public class PlayerControls : MonoBehaviour
             }
             if (lives <= 0)
             {
-                gm.LoseGame();
+                gm.EndGame(false);
             }
 
             if (CollectedBad)

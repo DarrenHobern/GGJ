@@ -10,11 +10,14 @@ public class GameControlScript : MonoBehaviour
     public float score = 0;
     public GameObject PauseScreen;
     private int peopleCollected = 0;
-    [SerializeField] private int bossThresholdOne = 10;
-    [SerializeField] private int bossThresholdTwo = 20;
-    [SerializeField] private int bossThresholdThree = 30;
+    [SerializeField] private GameObject[] bosses;
+    [SerializeField] private int bossThreshold = 10;
 
+    [SerializeField] private GameObject ObstacleSpawner;
+
+    private int nextBoss = 0; // the index of the nextBoss
     private bool Pause = false;
+
 
     void Awake()
     {
@@ -31,7 +34,17 @@ public class GameControlScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //TogglePauseMenu();
+        StartGame(); 
+    }
+
+    void StartGame() {
+        foreach (GameObject boss in bosses) {
+            boss.SetActive(false);
+        }
+        ObstacleSpawner.SetActive(true);
+        // Disable the pause screen.
+        Pause = true;
+        TogglePauseMenu();
     }
 
     // Update is called once per frame
@@ -42,38 +55,49 @@ public class GameControlScript : MonoBehaviour
             TogglePauseMenu();
         }
 
-
-
     }
 
     public void AddPerson()
     {
         peopleCollected++;
-        if (peopleCollected >= bossThresholdThree)
-        {
-            // Trigger third boss fight
-        }
-        else if (peopleCollected >= bossThresholdTwo)
-        {
-            // Trigger second boss fight
-        }
-        else if (peopleCollected >= bossThresholdOne)
-        {
-            // Trigger first boss fight
+
+        if (peopleCollected % bossThreshold == 0 && peopleCollected > 0) {
+            EnterBossMode();
         }
 
     }
 
-    private void TurnOffRegularMode()
+
+    private void EnterBossMode()
     {
+        print("Enterring boss mode");
+        ObstacleSpawner.SetActive(false);
+        bosses[nextBoss].SetActive(true);
+        // TODO check if the bossindex == bosses.length: win game.
+        nextBoss++;
 
     }
 
-    public void LoseGame()
+    public void ExitBossMode() {
+        ObstacleSpawner.SetActive(true);
+        if (nextBoss >= bosses.Length) {
+            EndGame(true);
+        }
+    }
+
+    public void EndGame(bool win)
     {
-        Debug.Log("End the Game in the game control script!");
-        // call game control function here
+        Debug.Log("Ending the game");
+        if (win) {
+            print("Winner winner chicken dinner");
+        }
+        else {
+            print("Git gud");
+        }
+
+        // End the game, show the score screen.
     }
+
 
     public void TogglePauseMenu()
     {
