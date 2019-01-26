@@ -7,6 +7,7 @@ public class NeighbourScript : MonoBehaviour
     [SerializeField] private Transform SpawnedStuff;
     [SerializeField] private Transform[] positionList;
     [SerializeField] private GameObject trashThing;
+    [SerializeField] private Vector3 throwVelocity;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +19,9 @@ public class NeighbourScript : MonoBehaviour
     void Update()
     {
         Transform placeToSpawn = GetRandomChild();
-        Instantiate(trashThing, placeToSpawn.position, placeToSpawn.rotation, SpawnedStuff);
-
+        GameObject trashPiece = Instantiate(trashThing, placeToSpawn.position, placeToSpawn.rotation, SpawnedStuff);
+        Rigidbody trashBody = trashPiece.GetComponent<Rigidbody>();
+        trashBody.AddForce(throwVelocity);
 
     }
 
