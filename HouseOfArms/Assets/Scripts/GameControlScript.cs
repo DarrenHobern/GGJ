@@ -77,7 +77,7 @@ public class GameControlScript : MonoBehaviour
         ObstacleSpawner.SetActive(false);
         bosses[nextBoss].SetActive(true);
         // TODO check if the bossindex == bosses.length: win game.
-        nextBoss++;
+        nextBoss = (nextBoss+1) % bosses.Length;
 
     }
 
