@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6589,6 +6589,21 @@ PrefabInstance:
       propertyPath: ScoreTxt
       value: 
       objectReference: {fileID: 98897311}
+    - target: {fileID: 3207441603914636202, guid: 4baaa719831724c298b931870a76769e,
+        type: 3}
+      propertyPath: leftBound
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207441603914636202, guid: 4baaa719831724c298b931870a76769e,
+        type: 3}
+      propertyPath: rightBound
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207441603914636202, guid: 4baaa719831724c298b931870a76769e,
+        type: 3}
+      propertyPath: speed
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4baaa719831724c298b931870a76769e, type: 3}
 --- !u!1 &1792620368
