@@ -70,12 +70,9 @@ public class PlayerControls : MonoBehaviour
             {
                 thing.GetComponent<ObjectMovement>().SeperateChildAudio();
             }
-
-
-            Debug.Log(gm.score);
+            
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);
-            Debug.Log(gm.score);
 
             if (CollectedGood)
             {
@@ -89,12 +86,8 @@ public class PlayerControls : MonoBehaviour
             {
                 thing.GetComponent<ObjectMovement>().SeperateChildAudio();
             }
-
-
-            Debug.Log(gm.score);
+            
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
-            Destroy(thing.gameObject);
-            Debug.Log(gm.score);
             Destroy(thing.gameObject);
             lives--;
             if (LivesTxt)
