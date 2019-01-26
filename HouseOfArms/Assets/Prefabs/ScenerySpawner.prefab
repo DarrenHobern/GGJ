@@ -47,6 +47,6 @@ MonoBehaviour:
   - {fileID: 6823576095873223934, guid: 3e746f49eac671d468d6319c0b6616e9, type: 3}
   - {fileID: 5291267258254328259, guid: 04b8c2a40f1cd174ca9ff2ba12b464ec, type: 3}
   - {fileID: 7510064358597408459, guid: bda705a88f43408418357ca9d31fef94, type: 3}
-  minTimeBetweenObjects: 0.5
-  maxTimeBetweenObjects: 1
+  minTimeBetweenObjects: 0.75
+  maxTimeBetweenObjects: 1.5
   isMirrored: 0
