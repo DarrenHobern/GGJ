@@ -9,6 +9,7 @@ public class GameControlScript : MonoBehaviour
 
     public float score = 0;
     public GameObject PauseScreen;
+    public GameObject GameOverScreen;
     private int peopleCollected = 0;
     [SerializeField] private int bossThresholdOne = 10;
     [SerializeField] private int bossThresholdTwo = 20;
@@ -71,8 +72,9 @@ public class GameControlScript : MonoBehaviour
 
     public void LoseGame()
     {
-        Debug.Log("End the Game in the game control script!");
-        // call game control function here
+        Time.timeScale = 0;
+        GameOverScreen.SetActive(true);
+
     }
 
     public void TogglePauseMenu()

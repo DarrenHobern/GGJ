@@ -21,11 +21,11 @@ public class PlayerControls : MonoBehaviour
         gm = GameControlScript.instance;
         if (LivesTxt)
         {
-            LivesTxt.text = "Lives: " + lives;
+            LivesTxt.text = "Resale value points: " + lives;
         }
         if(ScoreTxt)
         {
-            ScoreTxt.text = "Score: " + gm.score;
+            ScoreTxt.text = "Rent: $" + gm.score;
         }
 
         if (CollectedBad && CollectedGood)
@@ -83,7 +83,7 @@ public class PlayerControls : MonoBehaviour
             lives--;
             if (LivesTxt)
             {
-                LivesTxt.text = "Lives: " + lives;
+                LivesTxt.text = "Resale value points: " + lives;
             }
             if (lives <= 0)
             {
@@ -98,7 +98,7 @@ public class PlayerControls : MonoBehaviour
         }
         if (ScoreTxt)
         {
-            ScoreTxt.text = "Score: " + gm.score;
+            ScoreTxt.text = "Rent: $" + gm.score;
         }
     }
 }
