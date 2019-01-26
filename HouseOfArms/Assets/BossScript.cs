@@ -14,9 +14,8 @@ public class BossScript : MonoBehaviour
         health = maxHealth;
     }
 
-    private void OnCollisionEnter(Collision other) {
+    private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Bullet")) {
-            print("Hit!");
             health--;
             if (health <= 0) {
                 Die();

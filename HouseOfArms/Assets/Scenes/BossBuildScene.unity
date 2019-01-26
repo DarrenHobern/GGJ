@@ -6601,18 +6601,8 @@ PrefabInstance:
       objectReference: {fileID: 2046224095}
     - target: {fileID: 3207441603914636202, guid: 4baaa719831724c298b931870a76769e,
         type: 3}
-      propertyPath: gunForce
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3207441603914636202, guid: 4baaa719831724c298b931870a76769e,
-        type: 3}
-      propertyPath: gunForce.z
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3207441603914636202, guid: 4baaa719831724c298b931870a76769e,
-        type: 3}
-      propertyPath: gunForce.y
-      value: 200
+      propertyPath: attackDelay
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4baaa719831724c298b931870a76769e, type: 3}
@@ -7107,7 +7097,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bosses.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6118391178215273168}
     - target: {fileID: 90180184601141671, guid: 1446152959ba30d3db4f2560d5dfd3b5,
         type: 3}
       propertyPath: ObstacleSpawner
@@ -7116,7 +7106,7 @@ PrefabInstance:
     - target: {fileID: 90180184601141671, guid: 1446152959ba30d3db4f2560d5dfd3b5,
         type: 3}
       propertyPath: bossThreshold
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1446152959ba30d3db4f2560d5dfd3b5, type: 3}
@@ -7365,6 +7355,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ede52c8c6186319e9ecd9169e9c3036, type: 3}
+--- !u!114 &6118391178215273168 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6118391178215273168, guid: 851467a58858c4612a9cf2c2e06b3503,
+    type: 3}
+  m_PrefabInstance: {fileID: 1935189194}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c996fe38a35964b038ca9835c53ec8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7828898188448252145
 PrefabInstance:
   m_ObjectHideFlags: 0
