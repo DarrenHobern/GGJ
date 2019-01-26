@@ -7,9 +7,6 @@ public class ScenerySpawning : MonoBehaviour
     // This will hold the prefabs we will instantiate during runtime
     public GameObject[] sceneryPrefabs = new GameObject[3];
 
-    public float minTimeBetweenObjects;
-    public float maxTimeBetweenObjects;
-
     // If we want to mirror objects on one side of the road, we set this to true
     public bool isMirrored;
 
@@ -18,12 +15,8 @@ public class ScenerySpawning : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine (SpawnObjects());
-        //Instantiate(sceneryPrefabs[0], this.transform.position, Quaternion.identity, this.transform);
-
-        // Get the z difference from the camera to this transform.
-        // Instantiate objects to fill that distance.
-        // Random gaps?
+        // Find the distance between the camera and the end of the spawn zone,
+        // and fill that distance with scenery objects.
         
         float start_z = transform.position.z;
         float end_z   = GameObject.FindGameObjectWithTag("MainCamera").transform.position.z;
@@ -52,8 +45,12 @@ public class ScenerySpawning : MonoBehaviour
             // By providing this object's transform as the last parameter,
             // we store all spawned objects under this spawner in the hierarchy.
             // This prevents clutter.
-            Instantiate(sceneryPrefabs[typeOfScenery], spawnLocation, rotation, this.transform);
+            GameObject obj = Instantiate(sceneryPrefabs[typeOfScenery], spawnLocation, rotation, this.transform);
 
+            if (obj.tag == "Tree")
+            {
+                obj.transform.localScale = GetRandomTreeScaling();
+            }
 
             // We will reduce the remaining distance by the size of this gap between this and the next building.
             float gapSize = Random.Range(minimumGap, maximumGap);
@@ -62,9 +59,19 @@ public class ScenerySpawning : MonoBehaviour
         
     }
 
+    Vector3 GetRandomTreeScaling ()
+    {
+        float scale_x = Random.Range(0.2f, 0.6f);
+        float scale_y = Random.Range(0.3f, 0.7f);
+        float scale_z = Random.Range(0.2f, 0.6f);
+
+        return new Vector3(scale_x, scale_y, scale_z);
+    }
+
     /*
      * THIS IS OLD UNUSED CODE AND IS ONLY HERE FOR REFERENCE
      */
+    /*
     IEnumerator SpawnObjects()
     {
         while (true)
@@ -91,4 +98,5 @@ public class ScenerySpawning : MonoBehaviour
             }
         }
     }
+    */
 }
