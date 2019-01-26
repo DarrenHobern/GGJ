@@ -66,6 +66,12 @@ public class PlayerControls : MonoBehaviour
     {
         if (thing.gameObject.CompareTag("GoodThing"))
         {
+            if (thing.GetComponent<ObjectMovement>())
+            {
+                thing.GetComponent<ObjectMovement>().SeperateChildAudio();
+            }
+
+
             Debug.Log(gm.score);
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);
@@ -79,6 +85,12 @@ public class PlayerControls : MonoBehaviour
         }
         else if (thing.gameObject.CompareTag("BadThing"))
         {
+            if (thing.GetComponent<ObjectMovement>())
+            {
+                thing.GetComponent<ObjectMovement>().SeperateChildAudio();
+            }
+
+
             Debug.Log(gm.score);
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);

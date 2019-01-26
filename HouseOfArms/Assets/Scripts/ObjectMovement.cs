@@ -87,4 +87,15 @@ public class ObjectMovement : MonoBehaviour
             }
         }
     }
+
+    public void SeperateChildAudio()
+    {
+        if (GetComponentInChildren<AudioSource>())
+        {
+            GetComponentInChildren<AudioSource>().pitch = Random.Range(0.75f, 1.25f);
+            GetComponentInChildren<AudioSource>().Play();
+            Destroy(GetComponentInChildren<AudioSource>().gameObject, 2.0f);
+            GetComponentInChildren<AudioSource>().transform.parent = null;
+        }
+    }
 }
