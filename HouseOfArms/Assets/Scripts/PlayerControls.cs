@@ -21,11 +21,11 @@ public class PlayerControls : MonoBehaviour
         gm = GameControlScript.instance;
         if (LivesTxt)
         {
-            LivesTxt.text = "Lives: " + lives;
+            LivesTxt.text = "Resale value points: " + lives;
         }
         if(ScoreTxt)
         {
-            ScoreTxt.text = "Score: " + gm.score;
+            ScoreTxt.text = "Rent: $" + gm.score;
         }
 
         if (CollectedBad && CollectedGood)
@@ -73,6 +73,7 @@ public class PlayerControls : MonoBehaviour
             
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);
+            gm.AddPerson();
 
             if (CollectedGood)
             {
@@ -86,13 +87,12 @@ public class PlayerControls : MonoBehaviour
             {
                 thing.GetComponent<ObjectMovement>().SeperateChildAudio();
             }
-            
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);
             lives--;
             if (LivesTxt)
             {
-                LivesTxt.text = "Lives: " + lives;
+                LivesTxt.text = "Resale value points: " + lives;
             }
             if (lives <= 0)
             {
@@ -107,7 +107,7 @@ public class PlayerControls : MonoBehaviour
         }
         if (ScoreTxt)
         {
-            ScoreTxt.text = "Score: " + gm.score;
+            ScoreTxt.text = "Rent: $" + gm.score;
         }
     }
 }
