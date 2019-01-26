@@ -48,7 +48,6 @@ MonoBehaviour:
   CanBeDeleted: 1
   DeletionDistance: 2
   CanMoveSideways: 0
-  SidewaysMovementSpeed: 2
   MinMaxSidewaysMovement: {x: -3, y: 3}
 --- !u!1001 &2372708975476093810
 PrefabInstance:
@@ -107,15 +106,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 65be77953068d0b408605fd23fe93a99, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 65be77953068d0b408605fd23fe93a99, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 65be77953068d0b408605fd23fe93a99, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65be77953068d0b408605fd23fe93a99, type: 3}
