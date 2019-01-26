@@ -10,9 +10,12 @@ public class NeighbourScript : MonoBehaviour
     [SerializeField] private Vector3 throwVelocity;
     [SerializeField] private float spawnDelay = 1.0f;
 
+    private WaitForSeconds wait;
+
     // Start is called before the first frame update
     void Start()
     {
+        wait = new WaitForSeconds(spawnDelay);
         StartCoroutine(SpawnSomething());
     }
 
@@ -38,7 +41,7 @@ public class NeighbourScript : MonoBehaviour
             Rigidbody trashBody = trashPiece.GetComponent<Rigidbody>();
             // Only add the force if it's spawning from the sides! 
             trashBody.AddForce(throwVelocity);
-            yield return new WaitForSeconds(spawnDelay);
+            yield return wait;
         }
 
     }
