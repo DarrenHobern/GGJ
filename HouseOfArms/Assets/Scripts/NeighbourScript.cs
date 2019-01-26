@@ -5,6 +5,7 @@ using UnityEngine;
 public class NeighbourScript : MonoBehaviour
 {
     [SerializeField] private Transform SpawnedStuff;
+    [Tooltip("Right, Back, Left")]
     [SerializeField] private Transform[] positionList;
     [SerializeField] private GameObject trashThing;
     [SerializeField] private Vector3 throwVelocity;
@@ -19,15 +20,10 @@ public class NeighbourScript : MonoBehaviour
         StartCoroutine(SpawnSomething());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    Transform GetRandomChild()
+    Transform GetRandomChild(out int direction)
     {
         int positionIndex = Random.Range(0, positionList.Length);
+        direction = positionIndex -1; // convert 0,1,2 --> -1, 0 , 1 for right, back, left
         int subPositionIndex = Random.Range(0, positionList[positionIndex].childCount);
         return positionList[positionIndex].GetChild(subPositionIndex);
     }
@@ -36,11 +32,11 @@ public class NeighbourScript : MonoBehaviour
     {
         while (true)
         {
-            Transform placeToSpawn = GetRandomChild();
+            Transform placeToSpawn = GetRandomChild(out int direction);
             GameObject trashPiece = Instantiate(trashThing, placeToSpawn.position, placeToSpawn.rotation, SpawnedStuff);
             Rigidbody trashBody = trashPiece.GetComponent<Rigidbody>();
-            // Only add the force if it's spawning from the sides! 
-            trashBody.AddForce(throwVelocity);
+
+            trashBody.AddForce(new Vector3(throwVelocity.x * direction, throwVelocity.y, throwVelocity.z));
             yield return wait;
         }
 

@@ -13,6 +13,9 @@ public class PlayerControls : MonoBehaviour
     public Text LivesTxt;
     public Text ScoreTxt;
 
+    public GameObject CollectedBad;
+    public GameObject CollectedGood;
+
     void Start()
     {
         gm = GameControlScript.instance;
@@ -23,6 +26,12 @@ public class PlayerControls : MonoBehaviour
         if(ScoreTxt)
         {
             ScoreTxt.text = "Score: " + gm.score;
+        }
+
+        if (CollectedBad && CollectedGood)
+        {
+            CollectedBad.SetActive(false);
+            CollectedGood.SetActive(false);
         }
     }
 
@@ -38,15 +47,18 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     void Movement()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        transform.Translate(new Vector3(speed * horizontal, 0, 0));
-        if (transform.position.x <= leftBound)
+        if (!gm.GetPaused())
         {
-            transform.position = new Vector3(leftBound, transform.position.y, transform.position.z);
-        }
-        else if (transform.position.x >= rightBound)
-        {
-            transform.position = new Vector3(rightBound, transform.position.y, transform.position.z);
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            transform.Translate(new Vector3(speed * horizontal, 0, 0));
+            if (transform.position.x <= leftBound)
+            {
+                transform.position = new Vector3(leftBound, transform.position.y, transform.position.z);
+            }
+            else if (transform.position.x >= rightBound)
+            {
+                transform.position = new Vector3(rightBound, transform.position.y, transform.position.z);
+            }
         }
     }
 
@@ -58,6 +70,12 @@ public class PlayerControls : MonoBehaviour
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);
             Debug.Log(gm.score);
+
+            if (CollectedGood)
+            {
+                CollectedGood.transform.position = this.transform.position + new Vector3(0.0f, 0.0f, -0.5f);
+                CollectedGood.SetActive(true);
+            }
         }
         else if (thing.gameObject.CompareTag("BadThing"))
         {
@@ -74,6 +92,12 @@ public class PlayerControls : MonoBehaviour
             if (lives <= 0)
             {
                 gm.LoseGame();
+            }
+
+            if (CollectedBad)
+            {
+                CollectedBad.transform.position = this.transform.position + new Vector3(0.0f, 0.0f, -0.5f);
+                CollectedBad.SetActive(true);
             }
         }
         if (ScoreTxt)
