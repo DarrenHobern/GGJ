@@ -25,13 +25,13 @@ public class GameControlScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //TogglePauseMenu();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetButtonDown("Pause") || Input.GetKeyDown("joystick button 7"))
         {
             TogglePauseMenu();
         }
@@ -57,5 +57,10 @@ public class GameControlScript : MonoBehaviour
             PauseScreen.SetActive(true);
             Pause = true;
         }
+    }
+
+    public bool GetPaused()
+    {
+        return Pause;
     }
 }

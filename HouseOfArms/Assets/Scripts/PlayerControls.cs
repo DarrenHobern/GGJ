@@ -38,15 +38,18 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     void Movement()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        transform.Translate(new Vector3(speed * horizontal, 0, 0));
-        if (transform.position.x <= leftBound)
+        if (!gm.GetPaused())
         {
-            transform.position = new Vector3(leftBound, transform.position.y, transform.position.z);
-        }
-        else if (transform.position.x >= rightBound)
-        {
-            transform.position = new Vector3(rightBound, transform.position.y, transform.position.z);
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            transform.Translate(new Vector3(speed * horizontal, 0, 0));
+            if (transform.position.x <= leftBound)
+            {
+                transform.position = new Vector3(leftBound, transform.position.y, transform.position.z);
+            }
+            else if (transform.position.x >= rightBound)
+            {
+                transform.position = new Vector3(rightBound, transform.position.y, transform.position.z);
+            }
         }
     }
 
