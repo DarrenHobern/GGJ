@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -826,6 +826,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1479516563082746644, guid: f11263d5d7c45834c9408e06d50aad6e,
         type: 3}
+      propertyPath: sceneryPrefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479516563082746644, guid: f11263d5d7c45834c9408e06d50aad6e,
+        type: 3}
       propertyPath: minTimeBetweenObjects
       value: 0.5
       objectReference: {fileID: 0}
@@ -851,6 +856,24 @@ PrefabInstance:
       propertyPath: maximumGap
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1479516563082746644, guid: f11263d5d7c45834c9408e06d50aad6e,
+        type: 3}
+      propertyPath: sceneryPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 6823576095873223934, guid: 7caac05d6eb571f46bfb6e1851db281f,
+        type: 3}
+    - target: {fileID: 1479516563082746644, guid: f11263d5d7c45834c9408e06d50aad6e,
+        type: 3}
+      propertyPath: sceneryPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 5291267258254328259, guid: 940b15817b3bab94f9999f64e932bf25,
+        type: 3}
+    - target: {fileID: 1479516563082746644, guid: f11263d5d7c45834c9408e06d50aad6e,
+        type: 3}
+      propertyPath: sceneryPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 7510064358597408459, guid: a203deee46a4c2243b91ee882368ed2c,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11263d5d7c45834c9408e06d50aad6e, type: 3}
 --- !u!1 &464087750
@@ -7347,6 +7370,11 @@ PrefabInstance:
       propertyPath: CollectedGood
       value: 
       objectReference: {fileID: 2046224095}
+    - target: {fileID: 3207441603914636202, guid: 4baaa719831724c298b931870a76769e,
+        type: 3}
+      propertyPath: lives
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4baaa719831724c298b931870a76769e, type: 3}
 --- !u!1 &1792620368
@@ -7582,6 +7610,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1479516563082746644, guid: f11263d5d7c45834c9408e06d50aad6e,
         type: 3}
+      propertyPath: sceneryPrefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479516563082746644, guid: f11263d5d7c45834c9408e06d50aad6e,
+        type: 3}
       propertyPath: isMirrored
       value: 1
       objectReference: {fileID: 0}
@@ -7612,6 +7645,24 @@ PrefabInstance:
       propertyPath: maximumGap
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1479516563082746644, guid: f11263d5d7c45834c9408e06d50aad6e,
+        type: 3}
+      propertyPath: sceneryPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 6823576095873223934, guid: 7caac05d6eb571f46bfb6e1851db281f,
+        type: 3}
+    - target: {fileID: 1479516563082746644, guid: f11263d5d7c45834c9408e06d50aad6e,
+        type: 3}
+      propertyPath: sceneryPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 5291267258254328259, guid: 940b15817b3bab94f9999f64e932bf25,
+        type: 3}
+    - target: {fileID: 1479516563082746644, guid: f11263d5d7c45834c9408e06d50aad6e,
+        type: 3}
+      propertyPath: sceneryPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 7510064358597408459, guid: a203deee46a4c2243b91ee882368ed2c,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11263d5d7c45834c9408e06d50aad6e, type: 3}
 --- !u!1 &1932327764
