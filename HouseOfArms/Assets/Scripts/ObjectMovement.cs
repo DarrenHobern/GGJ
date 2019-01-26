@@ -6,6 +6,8 @@ public class ObjectMovement : MonoBehaviour
 {
     //Spped which the object moves towards the player
     public float MovingSpeed = 5.0f;
+    //Can this be deleted
+    public bool CanBeDeleted = true;
     //The distance behind the camera where it gets deleted
     public float DeletionDistance = 2.0f;
     //Can the object move sideways
@@ -42,7 +44,10 @@ public class ObjectMovement : MonoBehaviour
         {
             if(camera.transform.position.z > DeletionDistance + transform.position.z)
             {
-                Destroy(this.gameObject);
+                if (CanBeDeleted)
+                {
+                    Destroy(this.gameObject);
+                }
             }
         }
 
