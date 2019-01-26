@@ -11,11 +11,14 @@ public class GameControlScript : MonoBehaviour
     public GameObject PauseScreen;
     public GameObject GameOverScreen;
     private int peopleCollected = 0;
-    [SerializeField] private int bossThresholdOne = 10;
-    [SerializeField] private int bossThresholdTwo = 20;
-    [SerializeField] private int bossThresholdThree = 30;
+    [SerializeField] private BossScript[] bosses;
+    [SerializeField] private int bossThreshold = 10;
 
+    [SerializeField] private GameObject ObstacleSpawner;
+
+    private int nextBoss = 0; // the index of the nextBoss
     private bool Pause = false;
+
 
     void Awake()
     {
@@ -32,7 +35,19 @@ public class GameControlScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //TogglePauseMenu();
+        StartGame(); 
+    }
+
+    void StartGame() {
+        foreach (BossScript boss in bosses) {
+            boss.Reset();
+        }
+        ObstacleSpawner.SetActive(true);
+
+        // disable pause and gameover screens
+        PauseScreen.SetActive(false);
+        GameOverScreen.SetActive(false);
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -43,38 +58,52 @@ public class GameControlScript : MonoBehaviour
             TogglePauseMenu();
         }
 
-
-
     }
 
+    
     public void AddPerson()
     {
         peopleCollected++;
-        if (peopleCollected >= bossThresholdThree)
-        {
-            // Trigger third boss fight
-        }
-        else if (peopleCollected >= bossThresholdTwo)
-        {
-            // Trigger second boss fight
-        }
-        else if (peopleCollected >= bossThresholdOne)
-        {
-            // Trigger first boss fight
+
+        if (peopleCollected % bossThreshold == 0 && peopleCollected > 0) {
+            EnterBossMode();
         }
 
     }
 
-    private void TurnOffRegularMode()
+    private void EnterBossMode()
     {
+        print("Enterring boss mode");
+        ObstacleSpawner.SetActive(false);
+        bosses[nextBoss].Activate();
+        // TODO check if the nextBoss == bosses.length: win game.
+        nextBoss = (nextBoss+1) % (bosses.Length);
 
     }
 
-    public void LoseGame()
+    public void ExitBossMode() {
+        ObstacleSpawner.SetActive(true);
+        if (nextBoss >= bosses.Length) {
+            EndGame(true);
+        }
+    }
+
+    public void EndGame(bool win)
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0; 
         GameOverScreen.SetActive(true);
+        Pause = true;
 
+        Debug.Log("Ending the game");
+        
+        if (win) {
+            print("Winner winner chicken dinner");
+        }
+        else {
+            print("Git gud");
+        }
+
+        // End the game, show the score screen.
     }
 
     public void TogglePauseMenu()

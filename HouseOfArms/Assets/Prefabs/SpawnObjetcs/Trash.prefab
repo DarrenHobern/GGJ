@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9e9994509f4493c950de2734163f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreChange: -1
+  scoreChange: -2
 --- !u!114 &6179600618942245596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +123,6 @@ MonoBehaviour:
   CanBeDeleted: 1
   DeletionDistance: 2
   CanMoveSideways: 0
-  SidewaysMovementSpeed: 2
   MinMaxSidewaysMovement: {x: -3, y: 3}
 --- !u!54 &2416486568364914737
 Rigidbody:

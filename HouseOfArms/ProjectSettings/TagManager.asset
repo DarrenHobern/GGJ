@@ -7,6 +7,9 @@ TagManager:
   - GoodThing
   - BadThing
   - Score
+  - Tree
+  - Boss
+  - Bullet
   layers:
   - Default
   - TransparentFX
