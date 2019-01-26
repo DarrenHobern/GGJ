@@ -75,7 +75,7 @@ public class GameControlScript : MonoBehaviour
     {
         print("Enterring boss mode");
         ObstacleSpawner.SetActive(false);
-        bosses[nextBoss].gameObject.SetActive(true);
+        bosses[nextBoss].Activate();
         // TODO check if the nextBoss == bosses.length: win game.
         nextBoss = (nextBoss+1) % (bosses.Length);
 

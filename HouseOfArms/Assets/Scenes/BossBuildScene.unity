@@ -6599,6 +6599,21 @@ PrefabInstance:
       propertyPath: CollectedGood
       value: 
       objectReference: {fileID: 2046224095}
+    - target: {fileID: 3207441603914636202, guid: 4baaa719831724c298b931870a76769e,
+        type: 3}
+      propertyPath: gunForce
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207441603914636202, guid: 4baaa719831724c298b931870a76769e,
+        type: 3}
+      propertyPath: gunForce.z
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207441603914636202, guid: 4baaa719831724c298b931870a76769e,
+        type: 3}
+      propertyPath: gunForce.y
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4baaa719831724c298b931870a76769e, type: 3}
 --- !u!1 &1820930647
@@ -7009,31 +7024,8 @@ PrefabInstance:
       propertyPath: SpawnedStuff
       value: 
       objectReference: {fileID: 1338123142}
-    - target: {fileID: 1904283086, guid: 851467a58858c4612a9cf2c2e06b3503, type: 3}
-      propertyPath: m_TagString
-      value: Boss
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 851467a58858c4612a9cf2c2e06b3503, type: 3}
---- !u!1 &1935189195 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 911377725229083354, guid: 851467a58858c4612a9cf2c2e06b3503,
-    type: 3}
-  m_PrefabInstance: {fileID: 1935189194}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1935189196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935189195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c996fe38a35964b038ca9835c53ec8c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
 --- !u!1001 &1970104601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7115,7 +7107,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bosses.Array.data[0]
       value: 
-      objectReference: {fileID: 1935189196}
+      objectReference: {fileID: 0}
     - target: {fileID: 90180184601141671, guid: 1446152959ba30d3db4f2560d5dfd3b5,
         type: 3}
       propertyPath: ObstacleSpawner
@@ -7124,7 +7116,7 @@ PrefabInstance:
     - target: {fileID: 90180184601141671, guid: 1446152959ba30d3db4f2560d5dfd3b5,
         type: 3}
       propertyPath: bossThreshold
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1446152959ba30d3db4f2560d5dfd3b5, type: 3}

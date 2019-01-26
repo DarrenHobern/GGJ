@@ -21,7 +21,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private int bulletPoolSize = 300;
     [SerializeField] private Transform gunTransform;
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private float gunForce = 100;
+    [SerializeField] private Vector3 gunForce;
     [SerializeField] private float attackDelay = 0.1f;
     [SerializeField] private float reloadTime = 2f;
     [SerializeField] private float bulletLife = 5f;
@@ -99,7 +99,7 @@ public class PlayerControls : MonoBehaviour
                     print("fire");
                     // GameObject bullet = Instantiate(bulletPrefab, gunTransform.position, gunTransform.rotation); // TODO object pooling
                     GameObject bullet = SimplePool.Spawn(bulletPrefab, gunTransform.position, gunTransform.rotation);
-                    bullet.GetComponent<Rigidbody>().AddForce(Vector3.forward * gunForce);
+                    bullet.GetComponent<Rigidbody>().AddForce(gunForce);
                     StartCoroutine(DespawnBullet(bullet, bulletLife));
                 }
             }

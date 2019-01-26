@@ -16,6 +16,7 @@ public class BossScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Bullet")) {
+            print("Hit!");
             health--;
             if (health <= 0) {
                 Die();
@@ -29,8 +30,12 @@ public class BossScript : MonoBehaviour
         gameControl.ExitBossMode();
     }
 
+    public void Activate() {
+        transform.root.gameObject.SetActive(true);
+    }
+
     public void Reset() {
-        gameObject.SetActive(false);
+        transform.root.gameObject.SetActive(false);
         health = maxHealth;
         // TODO reset postion
     }
