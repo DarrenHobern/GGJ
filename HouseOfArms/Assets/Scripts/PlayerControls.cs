@@ -21,11 +21,11 @@ public class PlayerControls : MonoBehaviour
         gm = GameControlScript.instance;
         if (LivesTxt)
         {
-            LivesTxt.text = "Lives: " + lives;
+            LivesTxt.text = "Resale value points: " + lives;
         }
         if(ScoreTxt)
         {
-            ScoreTxt.text = "Score: " + gm.score;
+            ScoreTxt.text = "Rent: $" + gm.score;
         }
 
         if (CollectedBad && CollectedGood)
@@ -66,10 +66,14 @@ public class PlayerControls : MonoBehaviour
     {
         if (thing.gameObject.CompareTag("GoodThing"))
         {
-            Debug.Log(gm.score);
+            if (thing.GetComponent<ObjectMovement>())
+            {
+                thing.GetComponent<ObjectMovement>().SeperateChildAudio();
+            }
+            
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);
-            Debug.Log(gm.score);
+            gm.AddPerson();
 
             if (CollectedGood)
             {
@@ -79,15 +83,16 @@ public class PlayerControls : MonoBehaviour
         }
         else if (thing.gameObject.CompareTag("BadThing"))
         {
-            Debug.Log(gm.score);
+            if (thing.GetComponent<ObjectMovement>())
+            {
+                thing.GetComponent<ObjectMovement>().SeperateChildAudio();
+            }
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
-            Destroy(thing.gameObject);
-            Debug.Log(gm.score);
             Destroy(thing.gameObject);
             lives--;
             if (LivesTxt)
             {
-                LivesTxt.text = "Lives: " + lives;
+                LivesTxt.text = "Resale value points: " + lives;
             }
             if (lives <= 0)
             {
@@ -102,7 +107,7 @@ public class PlayerControls : MonoBehaviour
         }
         if (ScoreTxt)
         {
-            ScoreTxt.text = "Score: " + gm.score;
+            ScoreTxt.text = "Rent: $" + gm.score;
         }
     }
 }
