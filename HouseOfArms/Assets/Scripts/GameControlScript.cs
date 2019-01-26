@@ -89,8 +89,8 @@ public class GameControlScript : MonoBehaviour
 
     public void EndGame(bool win)
     {
-        Time.timeScale = 0;
-       // GameOverScreen.SetActive(true);
+        Time.timeScale = 0; 
+        GameOverScreen.SetActive(true);
         Pause = true;
 
         Debug.Log("Ending the game");
