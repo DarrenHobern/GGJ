@@ -63,11 +63,17 @@ MonoBehaviour:
   leftBound: -2
   rightBound: 2
   speed: 0.2
-  lives: 20
+  maxLives: 20
   LivesTxt: {fileID: 0}
   ScoreTxt: {fileID: 0}
   CollectedBad: {fileID: 0}
   CollectedGood: {fileID: 0}
+  gunTransform: {fileID: 1625797946207103484}
+  bulletPrefab: {fileID: 8496410328115591571, guid: db726ff3a224f0ac9a1f3642dd32d1e1,
+    type: 3}
+  gunForce: 100
+  attackDelay: 0.1
+  reloadTime: 2
 --- !u!54 &3207441603914636247
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -107,13 +113,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5347628812239160543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.32532054, y: 0, z: 0, w: 0.94560385}
   m_LocalPosition: {x: 0, y: 1.368, z: 0.677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3207441603914636246}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -37.97, y: 0, z: 0}
 --- !u!1001 &6498697154145370228
 PrefabInstance:
   m_ObjectHideFlags: 0

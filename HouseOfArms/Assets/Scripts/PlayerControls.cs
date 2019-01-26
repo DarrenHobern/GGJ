@@ -9,16 +9,29 @@ public class PlayerControls : MonoBehaviour
     public float leftBound = -5;
     public float rightBound = 5;
     public float speed = 1;
-    public int lives = 3;
+    [SerializeField] private int maxLives = 3;
+    private int lives;
     public Text LivesTxt;
     public Text ScoreTxt;
 
     public GameObject CollectedBad;
     public GameObject CollectedGood;
 
+    [Header("Ammo and Bullets")]
+    [SerializeField] private Transform gunTransform;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private float gunForce = 100;
+    [SerializeField] private float attackDelay = 0.1f;
+    [SerializeField] private float reloadTime = 2f;
+    private float nextAttackTime = 0;
+    private int personCount = 0; // also the magazine size
+    private int ammoCount = 0;
+    private bool reloading = false;
+
     void Start()
     {
         gm = GameControlScript.instance;
+        Reset();
         if (LivesTxt)
         {
             LivesTxt.text = "Property value points: " + lives;
@@ -39,7 +52,15 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
         Movement();
+        Attack();
+    }
 
+    private void Reset() {
+        lives = maxLives;
+        personCount = 0;
+        ammoCount = 0;
+        reloading = false;
+        nextAttackTime = 0;
     }
 
     /// <summary>
@@ -62,6 +83,36 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
+    private void Attack() {
+        bool attackInput = Input.GetAxisRaw("Fire") > Mathf.Epsilon;
+        if (attackInput) {
+            if (ammoCount > 0) {
+                if (Time.time >= nextAttackTime) {
+                    nextAttackTime = Time.time + attackDelay;
+                    ammoCount--;
+                    // Fire a person here
+                    print("fire");
+                    GameObject bullet = Instantiate(bulletPrefab, gunTransform.position, gunTransform.rotation); // TODO object pooling
+                    bullet.GetComponent<Rigidbody>().AddForce(Vector3.forward * gunForce);
+                }
+            }
+            else if (!reloading) {
+                // start reloading
+                reloading = true;
+                StartCoroutine(Reload());
+            }
+            
+        }
+    }
+
+    IEnumerator Reload() {
+        print("reloading");
+        yield return new WaitForSeconds(reloadTime);
+        ammoCount = personCount;
+        reloading = false;
+        print("done");
+    }
+
     private void OnTriggerEnter(Collider thing)
     {
         if (thing.gameObject.CompareTag("GoodThing"))
@@ -73,6 +124,7 @@ public class PlayerControls : MonoBehaviour
             
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);
+            personCount++;
             gm.AddPerson();
 
             if (CollectedGood)
