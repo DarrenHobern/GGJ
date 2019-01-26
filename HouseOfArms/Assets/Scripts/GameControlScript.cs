@@ -45,8 +45,9 @@ public class GameControlScript : MonoBehaviour
         ObstacleSpawner.SetActive(true);
 
         // disable pause and gameover screens
-        
-
+        PauseScreen.SetActive(false);
+        GameOverScreen.SetActive(false);
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
