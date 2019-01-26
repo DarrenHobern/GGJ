@@ -24,7 +24,7 @@ public class PathSpawningScript : MonoBehaviour
         {
             if(path.transform.position.z < DistanceBehindToTeleport)
             {
-                path.transform.Translate(-path.transform.forward * 15.0f * PathObjects.Length);
+                path.transform.Translate(-path.transform.forward * PathLength * PathObjects.Length);
             }
         }
     }

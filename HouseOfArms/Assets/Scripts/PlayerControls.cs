@@ -9,7 +9,7 @@ public class PlayerControls : MonoBehaviour
     public float leftBound = -5;
     public float rightBound = 5;
     public float speed = 1;
-    [SerializeField] private int maxLives = 3;
+    [SerializeField] private const int maxLives = 20;
     private int lives;
     public Text LivesTxt;
     public Text ScoreTxt;
