@@ -76,7 +76,7 @@ public class GameControlScript : MonoBehaviour
     {
         Time.timeScale = 0;
         GameOverScreen.SetActive(true);
-
+        Pause = true;
     }
 
     public void TogglePauseMenu()
