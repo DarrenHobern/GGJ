@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 911377725229083352}
   - component: {fileID: 911377725229083353}
   m_Layer: 0
-  m_Name: NeighboursSpawn
+  m_Name: NeighbourBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
