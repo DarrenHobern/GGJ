@@ -11,7 +11,7 @@ public class GameControlScript : MonoBehaviour
     public GameObject PauseScreen;
     public GameObject GameOverScreen;
     private int peopleCollected = 0;
-    [SerializeField] private GameObject[] bosses;
+    [SerializeField] private BossScript[] bosses;
     [SerializeField] private int bossThreshold = 10;
 
     [SerializeField] private GameObject ObstacleSpawner;
@@ -39,8 +39,8 @@ public class GameControlScript : MonoBehaviour
     }
 
     void StartGame() {
-        foreach (GameObject boss in bosses) {
-            boss.SetActive(false);
+        foreach (BossScript boss in bosses) {
+            boss.Reset();
         }
         ObstacleSpawner.SetActive(true);
 
@@ -60,6 +60,7 @@ public class GameControlScript : MonoBehaviour
 
     }
 
+    
     public void AddPerson()
     {
         peopleCollected++;
@@ -70,14 +71,13 @@ public class GameControlScript : MonoBehaviour
 
     }
 
-
     private void EnterBossMode()
     {
         print("Enterring boss mode");
         ObstacleSpawner.SetActive(false);
-        bosses[nextBoss].SetActive(true);
-        // TODO check if the bossindex == bosses.length: win game.
-        nextBoss = (nextBoss+1) % bosses.Length;
+        bosses[nextBoss].Activate();
+        // TODO check if the nextBoss == bosses.length: win game.
+        nextBoss = (nextBoss+1) % (bosses.Length);
 
     }
 

@@ -8,6 +8,8 @@ TagManager:
   - BadThing
   - Score
   - Tree
+  - Boss
+  - Bullet
   layers:
   - Default
   - TransparentFX
