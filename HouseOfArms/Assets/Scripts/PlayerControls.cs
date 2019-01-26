@@ -21,7 +21,7 @@ public class PlayerControls : MonoBehaviour
         gm = GameControlScript.instance;
         if (LivesTxt)
         {
-            LivesTxt.text = "Resale value points: " + lives;
+            LivesTxt.text = "Property value points: " + lives;
         }
         if(ScoreTxt)
         {
@@ -92,7 +92,7 @@ public class PlayerControls : MonoBehaviour
             lives--;
             if (LivesTxt)
             {
-                LivesTxt.text = "Resale value points: " + lives;
+                LivesTxt.text = "Property value points: " + lives;
             }
             if (lives <= 0)
             {
