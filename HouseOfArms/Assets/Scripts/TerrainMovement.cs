@@ -7,7 +7,7 @@ public class TerrainMovement : MonoBehaviour
     //Group of the path object
     public GameObject[] PathObjects;
     //Default Path length
-    public float PathLength = 100.0f;
+    public float PathLength = 50.0f;
     //When a path is _ distance behind it will teleport to the front
     public float DistanceBehindToTeleport = -100.0f;
 
@@ -24,7 +24,7 @@ public class TerrainMovement : MonoBehaviour
         {
             if (path.transform.position.z < DistanceBehindToTeleport)
             {
-                path.transform.Translate(path.transform.forward * 100.0f * PathObjects.Length);
+                path.transform.Translate(path.transform.forward * PathLength * PathObjects.Length);
             }
         }
     }

@@ -9,7 +9,7 @@ public class NeighbourScript : MonoBehaviour
     [SerializeField] private Transform[] positionList;
     [SerializeField] private GameObject trashThing;
     [SerializeField] private Vector3 throwVelocity;
-    [SerializeField] private float spawnDelay = 1.0f;
+    [SerializeField] private float spawnDelay = 5.0f;
 
     private WaitForSeconds wait;
 
