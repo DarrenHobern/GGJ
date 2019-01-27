@@ -135,10 +135,10 @@ public class PlayerControls : MonoBehaviour
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);
             personCount++;
-            if(0 == Input.GetAxisRaw("Fire"))
+            /*if(0 == Input.GetAxisRaw("Fire"))
             {
                 ammoCount += 1;
-            }
+            }*/
             gm.AddPerson();
 
             if (CollectedGood)
