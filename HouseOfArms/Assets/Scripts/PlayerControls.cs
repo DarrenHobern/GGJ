@@ -95,8 +95,6 @@ public class PlayerControls : MonoBehaviour
                 if (Time.time >= nextAttackTime) {
                     nextAttackTime = Time.time + attackDelay;
                     ammoCount--;
-                    // Fire a person here
-                    // GameObject bullet = Instantiate(bulletPrefab, gunTransform.position, gunTransform.rotation); // TODO object pooling
                     GameObject bullet = SimplePool.Spawn(bulletPrefab, gunTransform.position, gunTransform.rotation);
                     bullet.GetComponent<Rigidbody>().AddForce(gunForce);
                     StartCoroutine(DespawnBullet(bullet, bulletLife));
