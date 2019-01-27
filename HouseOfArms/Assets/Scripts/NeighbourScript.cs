@@ -13,11 +13,18 @@ public class NeighbourScript : MonoBehaviour
 
     private WaitForSeconds wait;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         wait = new WaitForSeconds(spawnDelay);
+    }
+
+
+    void OnEnable()
+    {
         StartCoroutine(SpawnSomething());
+    }
+
+    void OnDisable() {
+        StopAllCoroutines();
     }
 
     Transform GetRandomChild(out int direction)
