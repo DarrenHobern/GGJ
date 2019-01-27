@@ -8713,11 +8713,11 @@ PrefabInstance:
       propertyPath: CollectedGood
       value: 
       objectReference: {fileID: 2046224095}
-    - target: {fileID: 3207441603914636202, guid: 4baaa719831724c298b931870a76769e,
+    - target: {fileID: 4518831852471797391, guid: 4baaa719831724c298b931870a76769e,
         type: 3}
-      propertyPath: bulletPoolSize
-      value: 20
-      objectReference: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8eb273007b9570e4b94565e9f089244f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4baaa719831724c298b931870a76769e, type: 3}
 --- !u!1 &1820930647
