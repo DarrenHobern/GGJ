@@ -53,7 +53,6 @@ public class ObjectMovement : MonoBehaviour
     {
         if (GetComponent<Rigidbody>())
         {
-            Debug.Log("Applying Force");
             GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, -1.0f) * MovingSpeed * 50.0f * Time.deltaTime);
         }
         else
