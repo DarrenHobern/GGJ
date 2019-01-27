@@ -147,6 +147,10 @@ public static class SimplePool {
 		}
 	}
 
+    public static void ClearPools() {
+        pools.Clear();
+    }
+
 	/// <summary>
 	/// If you want to preload a few copies of an object at the start
 	/// of a scene, you can use this. Really not needed unless you're
