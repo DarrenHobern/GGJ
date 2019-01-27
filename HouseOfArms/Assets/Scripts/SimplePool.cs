@@ -148,7 +148,8 @@ public static class SimplePool {
 	}
 
     public static void ClearPools() {
-        pools.Clear();
+        if (pools != null)
+            pools.Clear();
     }
 
 	/// <summary>
