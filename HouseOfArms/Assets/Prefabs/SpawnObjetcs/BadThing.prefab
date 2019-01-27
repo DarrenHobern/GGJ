@@ -27,11 +27,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1375675879460276629}
-  - {fileID: 4425500439761248839}
+  m_Children: []
   m_Father: {fileID: 6590601331248043012}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &7314069537177976097
 AudioSource:
@@ -154,12 +152,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2764618770462181619}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3318935092756282365}
-  m_RootOrder: 1
+  m_Father: {fileID: 6590601331248043012}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &2948042942538062225
 ParticleSystem:
@@ -4857,7 +4855,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1375675879460276629}
   - {fileID: 3318935092756282365}
+  - {fileID: 4425500439761248839}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4909,7 +4909,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3318935092756282365}
+    m_TransformParent: {fileID: 6590601331248043012}
     m_Modifications:
     - target: {fileID: 100010, guid: 1de6458340a6d4bc1b9545beb6122b44, type: 3}
       propertyPath: m_Name
@@ -4917,7 +4917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 1de6458340a6d4bc1b9545beb6122b44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 1de6458340a6d4bc1b9545beb6122b44, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4929,7 +4929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 1de6458340a6d4bc1b9545beb6122b44, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 1de6458340a6d4bc1b9545beb6122b44, type: 3}
       propertyPath: m_LocalRotation.y
@@ -4937,7 +4937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 1de6458340a6d4bc1b9545beb6122b44, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 1de6458340a6d4bc1b9545beb6122b44, type: 3}
       propertyPath: m_LocalRotation.w
