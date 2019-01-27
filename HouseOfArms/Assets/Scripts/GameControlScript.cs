@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameControlScript : MonoBehaviour
 {
     public static GameControlScript instance = null;
 
+    [Tooltip("The number of bosses you must beat to win the game.")]
+    [SerializeField] int bossesToBeat = 3;
     public float score = 0;
-    public GameObject PauseScreen;
-    public GameObject GameOverScreen;
+    [SerializeField] private GameObject PauseScreen;
+    [SerializeField] private GameObject GameOverScreen;
+    [SerializeField] private Text WinText;
+    [SerializeField] private Text LoseText;
     private int peopleCollected = 0;
     [SerializeField] private BossScript[] bosses;
     [SerializeField] private int bossThreshold = 10;
@@ -16,6 +21,7 @@ public class GameControlScript : MonoBehaviour
     [SerializeField] private GameObject ObstacleSpawner;
 
     private int nextBoss = 0; // the index of the nextBoss
+    private int defeatedBosses = 0;
     private bool Pause = false;
 
 
@@ -72,17 +78,16 @@ public class GameControlScript : MonoBehaviour
 
     private void EnterBossMode()
     {
-        print("Enterring boss mode");
         ObstacleSpawner.SetActive(false);
         bosses[nextBoss].Activate();
-        // TODO check if the nextBoss == bosses.length: win game.
         nextBoss = (nextBoss+1) % (bosses.Length);
 
     }
 
     public void ExitBossMode() {
         ObstacleSpawner.SetActive(true);
-        if (nextBoss >= bosses.Length) {
+        defeatedBosses++;
+        if (defeatedBosses >= bossesToBeat) {
             EndGame(true);
         }
     }
@@ -93,17 +98,9 @@ public class GameControlScript : MonoBehaviour
         GameOverScreen.SetActive(true);
         SimplePool.ClearPools();
         Pause = true;
-
-        Debug.Log("Ending the game");
         
-        if (win) {
-            print("Winner winner chicken dinner");
-        }
-        else {
-            print("Git gud");
-        }
-
-        // End the game, show the score screen.
+        WinText.gameObject.SetActive(win);
+        LoseText.gameObject.SetActive(!win);
     }
 
     public void TogglePauseMenu()
