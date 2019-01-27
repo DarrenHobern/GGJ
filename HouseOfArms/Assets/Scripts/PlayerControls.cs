@@ -60,7 +60,7 @@ public class PlayerControls : MonoBehaviour
 
     private void Reset() {
         lives = maxLives;
-        personCount = 0;
+        personCount = 1;
         ammoCount = 1;
         reloading = false;
         nextAttackTime = 0;
@@ -135,6 +135,10 @@ public class PlayerControls : MonoBehaviour
             gm.score += thing.gameObject.GetComponent<HitThing>().ScoreChange;
             Destroy(thing.gameObject);
             personCount++;
+            if(0 == Input.GetAxisRaw("Fire"))
+            {
+                ammoCount += 1;
+            }
             gm.AddPerson();
 
             if (CollectedGood)
