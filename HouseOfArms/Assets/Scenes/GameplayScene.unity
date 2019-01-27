@@ -476,6 +476,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 92030535}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &235624547 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4684084244722962183, guid: 7f9b01f53cfe15241bbb4f8a6350f384,
+    type: 3}
+  m_PrefabInstance: {fileID: 6098806390074261205}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &325661783
 GameObject:
   m_ObjectHideFlags: 0
@@ -6161,12 +6173,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737972906}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &743677712 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4684084245370495017, guid: 7f9b01f53cfe15241bbb4f8a6350f384,
-    type: 3}
-  m_PrefabInstance: {fileID: 6098806390074261205}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &762326283
 GameObject:
   m_ObjectHideFlags: 0
@@ -6739,30 +6745,6 @@ MonoBehaviour:
   DistanceInfrontOfCamera: 45
   TimeBetweenSpawns: 2.5
   TimeBetweenSpawnsDecreaseAmount: 0.1
---- !u!114 &1092631827 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9128523729593822257, guid: 7f9b01f53cfe15241bbb4f8a6350f384,
-    type: 3}
-  m_PrefabInstance: {fileID: 6098806390074261205}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1154791494 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4684084244722962183, guid: 7f9b01f53cfe15241bbb4f8a6350f384,
-    type: 3}
-  m_PrefabInstance: {fileID: 6098806390074261205}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1181862062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6977,6 +6959,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184383935}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1194894823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4684084245370495017, guid: 7f9b01f53cfe15241bbb4f8a6350f384,
+    type: 3}
+  m_PrefabInstance: {fileID: 6098806390074261205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1357670634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7328,6 +7316,18 @@ Transform:
   m_Father: {fileID: 491604370}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1501292810 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9128523729593822257, guid: 7f9b01f53cfe15241bbb4f8a6350f384,
+    type: 3}
+  m_PrefabInstance: {fileID: 6098806390074261205}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1503592407
 GameObject:
   m_ObjectHideFlags: 0
@@ -8153,9 +8153,9 @@ MonoBehaviour:
   bossesToBeat: 3
   score: 0
   PauseScreen: {fileID: 2103395649}
-  GameOverScreen: {fileID: 743677712}
-  WinText: {fileID: 1092631827}
-  LoseText: {fileID: 1154791494}
+  GameOverScreen: {fileID: 1194894823}
+  WinText: {fileID: 235624547}
+  LoseText: {fileID: 1501292810}
   bosses:
   - {fileID: 611439644}
   bossThreshold: 10

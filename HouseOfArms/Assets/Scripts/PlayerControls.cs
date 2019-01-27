@@ -29,6 +29,7 @@ public class PlayerControls : MonoBehaviour
     private int personCount = 0; // also the magazine size
     private int ammoCount = 0;
     private bool reloading = false;
+    [SerializeField] private Transform canvas;
 
     void Start()
     {
@@ -64,6 +65,7 @@ public class PlayerControls : MonoBehaviour
         ammoCount = 1;
         reloading = false;
         nextAttackTime = 0;
+        DisplayAmmoCount();
     }
 
     /// <summary>
@@ -95,6 +97,7 @@ public class PlayerControls : MonoBehaviour
                 if (Time.time >= nextAttackTime) {
                     nextAttackTime = Time.time + attackDelay;
                     ammoCount--;
+                    canvas.GetChild(ammoCount).gameObject.SetActive(false);
                     GameObject bullet = SimplePool.Spawn(bulletPrefab, gunTransform.position, gunTransform.rotation);
                     bullet.GetComponent<Rigidbody>().AddForce(gunForce);
                     StartCoroutine(DespawnBullet(bullet, bulletLife));
@@ -116,7 +119,17 @@ public class PlayerControls : MonoBehaviour
     IEnumerator Reload() {
         yield return new WaitForSeconds(reloadTime);
         ammoCount = personCount;
+        DisplayAmmoCount();
         reloading = false;
+    }
+
+    private void DisplayAmmoCount() {
+        for (int i = 0; i < ammoCount && i < canvas.childCount; i++) {
+            canvas.GetChild(i).gameObject.SetActive(true);
+        }
+        for (int i = ammoCount; i < canvas.childCount; i++) {
+            canvas.GetChild(i).gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider thing)
