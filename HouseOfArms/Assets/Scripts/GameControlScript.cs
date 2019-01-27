@@ -6,7 +6,6 @@ public class GameControlScript : MonoBehaviour
 {
     public static GameControlScript instance = null;
 
-
     public float score = 0;
     public GameObject PauseScreen;
     public GameObject GameOverScreen;
@@ -92,6 +91,7 @@ public class GameControlScript : MonoBehaviour
     {
         Time.timeScale = 0; 
         GameOverScreen.SetActive(true);
+        SimplePool.ClearPools();
         Pause = true;
 
         Debug.Log("Ending the game");

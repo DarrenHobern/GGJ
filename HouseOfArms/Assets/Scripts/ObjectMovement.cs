@@ -51,7 +51,15 @@ public class ObjectMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(-transform.forward * MovingSpeed * Time.deltaTime); //TODO make object face the way it's moving
+        if (GetComponent<Rigidbody>())
+        {
+            Debug.Log("Applying Force");
+            GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, -1.0f) * MovingSpeed * 50.0f * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(-transform.forward * MovingSpeed * Time.deltaTime); //TODO make object face the way it's moving
+        }
 
         GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
         if (camera)
