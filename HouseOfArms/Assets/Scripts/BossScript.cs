@@ -17,6 +17,7 @@ public class BossScript : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Bullet")) {
             health--;
+            GetComponent<AudioSource>().Play();
             if (health <= 0) {
                 Die();
             }

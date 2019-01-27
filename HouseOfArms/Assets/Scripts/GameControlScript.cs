@@ -44,6 +44,7 @@ public class GameControlScript : MonoBehaviour
     }
 
     void StartGame() {
+        SimplePool.ClearPools();
         foreach (BossScript boss in bosses) {
             boss.Reset();
         }
@@ -94,9 +95,8 @@ public class GameControlScript : MonoBehaviour
 
     public void EndGame(bool win)
     {
-        Time.timeScale = 0; 
+        Time.timeScale = 0;
         GameOverScreen.SetActive(true);
-        SimplePool.ClearPools();
         Pause = true;
         
         WinText.gameObject.SetActive(win);
