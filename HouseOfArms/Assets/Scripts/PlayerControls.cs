@@ -18,7 +18,7 @@ public class PlayerControls : MonoBehaviour
     public GameObject CollectedGood;
 
     [Header("Ammo and Bullets")]
-    [SerializeField] private int bulletPoolSize = 300;
+    [SerializeField] private int bulletPoolSize = 30;
     [SerializeField] private Transform gunTransform;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Vector3 gunForce;
@@ -61,7 +61,7 @@ public class PlayerControls : MonoBehaviour
     private void Reset() {
         lives = maxLives;
         personCount = 0;
-        ammoCount = 0;
+        ammoCount = 1;
         reloading = false;
         nextAttackTime = 0;
     }
@@ -93,6 +93,7 @@ public class PlayerControls : MonoBehaviour
         if (attackInput) {
             if (ammoCount > 0) {
                 if (Time.time >= nextAttackTime) {
+                    Debug.Log("Fire");
                     nextAttackTime = Time.time + attackDelay;
                     ammoCount--;
                     // Fire a person here
